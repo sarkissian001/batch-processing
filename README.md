@@ -13,8 +13,8 @@
 2. Navigate to the project directory.
 
    ```bash
-   git clone <repository_url>
-   cd <repository_name>
+   git clone https://github.com/sarkissian001/batch-processing.git
+   cd batch-processing
    ```
 
 ## Running the Pipeline Locally
