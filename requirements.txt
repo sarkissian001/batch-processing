@@ -1,0 +1,9 @@
+pyspark==3.5.1
+prefect==2.19.1
+pytest==8.2.1
+pandas==2.2.2
+setuptools==70.0.0
+pyarrow==16.1.0
+dagster==1.7.7
+dagit==1.7.7
+dagster-pyspark==0.23.7

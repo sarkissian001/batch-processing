@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  dagster:
+    build: .
+    container_name: dagster
+    environment:
+      - DAGSTER_HOME=/app/.dagster_home
+    volumes:
+      - .:/app
+      - .dagster_home:/app/.dagster_home
+    ports:
+      - "3000:3000"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: '4g'
+        reservations:
+          cpus: '1'
+          memory: '2g'
+
+  dagster-daemon:
+    build: .
+    container_name: dagster-daemon
+    environment:
+      - DAGSTER_HOME=/app/.dagster_home
+    volumes:
+      - .:/app
+      - .dagster_home:/app/.dagster_home
+    command: ["dagster-daemon", "run"]
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: '4g'
+        reservations:
+          cpus: '1'
+          memory: '2g'
+
+volumes:
+  .dagster_home:

@@ -1,0 +1,2 @@
+[tool.dagster]
+repository = "app.pipeline:defs"
